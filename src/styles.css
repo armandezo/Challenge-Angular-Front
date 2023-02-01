@@ -1,0 +1,36 @@
+/*  Algunos estilos extras*/
+.img-avatar{
+ width: 300px;
+  padding-bottom: 3rem;
+}
+
+.centrar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.borde_sombreado{
+  box-shadow: -15px 20px #415a77;
+}
+.borde_redondeado{
+  border-radius: 10px;
+}
+
+
+.posicion_normal{
+  height: 50px;
+}
+
+
+.personaje{
+
+  padding: 1rem 1rem;
+  margin-bottom: 0.5rem;
+  transition: 0.3s;
+}
+
+.personaje:hover{
+  padding: 1rem 1.5rem;
+}
+

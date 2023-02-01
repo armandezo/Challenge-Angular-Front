@@ -1,0 +1,59 @@
+<!--barra-->
+<div class="row animated fadeIn fast">
+  <div class="col-12">
+    <div class="card p-0">
+      <div class="card-body">
+        <input (keyup.enter)="buscar(txtTermino.value)"  #txtTermino type="text" class="form-control" placeholder="Buscar Personaje...">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--carga-->
+<div class="row animated fadeIn fast" *ngIf="cargando">
+  <div class="col-12">
+    <div class="alert alert-info text-center">
+      <h4 class="alert-dismissible">Cargando</h4>
+      <i class="fa fa-spin fa-refresh fa-2x"></i>
+      <p class="mb-0">Porfavor espere un poco ...</p>
+    </div>
+  </div>
+</div>
+
+<div class="row animated fadeIn fast" *ngIf="personajesAgregados.length === 0">
+  <div class="col-12">
+    <div class="alert alert-danger text-center">
+      <h4 class="alert-dismissible">No hay resultados</h4>
+      <i class="fa fa-spin fa-refresh fa-2x"></i>
+      <p class="mb-0">Parece que no existe el personaje a buscar</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="row"  *ngIf="personajesAgregados.length != 0">
+  <div class="col-12">
+    <h4 class="d-inline">Mis personajes - ({{(totalPersonajesAgregados)}})</h4>
+    <p class="text-muted m-t-0">Añade un personaje y agrega una review</p>
+    <!-- Row -->
+    <div class="row" >
+      <!-- column  for -->
+      <div class="col-lg-3 col-md-6" *ngFor="let personaje of personajesAgregados">
+        <!-- Card -->
+        <div class="card">
+          <img class="card-img-top img-responsive borde_redondeado" [src]="personaje.img" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title">{{personaje.nombre}}</h4>
+            <p class="card-text"> Calificacion: {{personaje.calificacion}}</p>
+            <p class="card-text"> Comentario: {{personaje.comentario}}</p>
+          </div>
+        </div>
+        <!-- Card -->
+      </div>
+    </div>
+    <!-- Row -->
+  </div>
+</div>

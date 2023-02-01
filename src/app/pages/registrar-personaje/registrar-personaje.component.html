@@ -1,0 +1,41 @@
+<p class="text-muted text-dark font-bold align-content-end py-4"> * Añadir un nuevo personaje a tu repertorio</p>
+
+<div class="row">
+  <div class="col-md-6 centrar">
+    <div class="card">
+      <div class="el-card-item">
+        <div class="el-card-avatar el-overlay-1"> <img class="borde_redondeado borde_sombreado" [src]="personajeTemp.img" alt="{{personajeTemp.nombre}}">
+        </div>
+        <div class="el-card-content">
+          <h3 class="box-title py-4 text-center">{{personajeTemp.nombre}}</h3> </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card">
+      <form class="form-material m-t-40"
+            [formGroup]="registerPersonajeForm"
+            (ngSubmit)="agregarPersonaje()"
+      >
+        <div class="form-group row">
+          <label class="col-4 col-form-label">Calificación ({{registerPersonajeForm.get('calificacion')?.value}}) </label>
+          <div class="col-6">
+            <input type="range" class="form-control" id="range" [value]="registerPersonajeForm.get('calificacion')?.value"  formControlName="calificacion" max="5">
+          </div>
+        </div>
+
+        <div class="form-group  ">
+          <label>Agregar Comentario</label>
+          <textarea class="form-control border border-secondary p-2" rows="5" formControlName="comentario" ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-info waves-effect waves-light m-r-10 ">Agregar</button>
+        <button type="button" routerLink="/" class="btn btn-danger waves-effect waves-light m-r-10 ">Cancelar</button>
+
+      </form>
+
+
+    </div>
+  </div>
+</div>

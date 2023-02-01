@@ -1,7 +1,9 @@
 # EntrevistaFront
 
 ## Para ejecutar el programa del frontend
-(Antes se debera ejecutar el backend para que se pueda realizar el consumo del servicio → https://github.com/CodigoTotal01/backend-entrevista ); Por parte del frontend
+(Antes de ejecse debera ejecutar el backend para que se pueda realizar el consumo del servicio); 
+
+Por parte del frontend
 Ejecutar en la terminal → 
 
 1. `npm install`
